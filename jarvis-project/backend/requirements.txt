@@ -8,11 +8,3 @@ groq==0.15.0
 wikipedia==1.4.0
 plyer==2.1.0
 
-# Desktop-only packages required by main.py (NOT used by server.py, but
-# main.py imports them at the top of the file, so they must be installed
-# wherever you run main.py directly, e.g. your own Windows/Mac/Linux machine)
-pyttsx3==2.98
-SpeechRecognition==3.11.0
-pyautogui==0.9.54
-pywhatkit==5.4
-PyAudio==0.2.14
