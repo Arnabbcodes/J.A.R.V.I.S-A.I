@@ -1,7 +1,7 @@
 # J.A.R.V.I.S. -A.I  — Voice Assistant with Web HUD
 
-A Python voice assistant with an Iron-Man-style browser interface. `main.py` is the original desktop assistant (mic input, text-to-speech, task management, AI chat via Groq). `server.py` exposes that same command set over HTTP so the `frontend/` HUD can talk to it from a browser.
-
+A Python voice assistant with an Iron-Man-style browser interface. `main.py` is the original desktop assistant (mic input, text-to-speech, task management, AI chat via Groq). `server.py` exposes that same command set over HTTP so the `frontend/` HUD can talk to it from a browser. It can also work as your desktop assistant if you run the 'main.py' file in your terminal as well as you can control few operations from the localhost browser itself such as opening youtube, opening social media platforms, playing music etc.
+You are requested to go through the code once inorder to make it work as your personal desktop/A.I assistant in your desktop/laptop.
 ## Structure
 
 ```
@@ -68,3 +68,4 @@ python main.py
 - `userconfiguration.py` is gitignored — never commit real credentials.
 - Voice input requires Chrome or Edge (Web Speech API); typing works in any browser.
 - Commands like `send whatsapp` and generic `open <app>` require a real desktop and only work when running `main.py` directly, not through `server.py`.
+Made by ~Arnab Bhattacharjee :)<img width="1919" height="909" alt="Screenshot 2026-09-05 182100" src="https://github.com/user-attachments/assets/cd59a47d-5bfd-41da-bea2-5b314f82e756" />
