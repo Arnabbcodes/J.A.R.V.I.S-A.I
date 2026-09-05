@@ -1,4 +1,4 @@
-# J.A.R.V.I.S.  A.I  — Voice Assistant with Web HUD
+# J.A.R.V.I.S. -A.I  — Voice Assistant with Web HUD
 
 A Python voice assistant with an Iron-Man-style browser interface. `main.py` is the original desktop assistant (mic input, text-to-speech, task management, AI chat via Groq). `server.py` exposes that same command set over HTTP so the `frontend/` HUD can talk to it from a browser.
 
