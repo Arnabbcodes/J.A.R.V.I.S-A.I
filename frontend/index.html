@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>J.A.R.V.I.S. — System Interface</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">J</div>
+    <div class="brand-text">
+      <h1>J.A.R.V.I.S.</h1>
+      <p>Just A Rather Very Intelligent System</p>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="conn-dot" id="connDot"></div>
+    <span id="connLabel">Connecting…</span>
+    <time id="clock">00:00:00</time>
+  </div>
+</header>
+
+<div class="hud-grid">
+
+  <!-- ============ LEFT: SYSTEM DIAGNOSTICS ============ -->
+  <aside class="panel panel-left">
+    <h2>System Diagnostics</h2>
+
+    <div class="metric">
+      <div class="metric-row"><span>Core</span><strong id="mCore">Optimal</strong></div>
+      <div class="bar"><div class="bar-fill" style="width:96%"></div></div>
+    </div>
+    <div class="metric">
+      <div class="metric-row"><span>Neural Link</span><strong id="mNeural">Idle</strong></div>
+      <div class="bar"><div class="bar-fill" id="mNeuralBar" style="width:20%"></div></div>
+    </div>
+    <div class="metric">
+      <div class="metric-row"><span>Voice Engine</span><strong id="mVoice">Ready</strong></div>
+      <div class="bar"><div class="bar-fill" style="width:88%"></div></div>
+    </div>
+    <div class="metric">
+      <div class="metric-row"><span>API Link</span><strong id="mApi">Checking</strong></div>
+      <div class="bar"><div class="bar-fill" id="mApiBar" style="width:10%"></div></div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat"><span class="stat-label">Uptime</span><span class="stat-value" id="uptime">00:00:00</span></div>
+      <div class="stat"><span class="stat-label">Latency</span><span class="stat-value" id="latency">—</span></div>
+      <div class="stat"><span class="stat-label">Mode</span><span class="stat-value">Tactical</span></div>
+      <div class="stat"><span class="stat-label">Security</span><span class="stat-value">Maximum</span></div>
+    </div>
+
+    <h2 class="commands-title">Quick Commands</h2>
+    <div class="quick-commands" id="quickCommands">
+      <button data-cmd="hello">Greeting</button>
+      <button data-cmd="say time">Current Time</button>
+      <button data-cmd="say date">Current Date</button>
+      <button data-cmd="play music">Play Music</button>
+      <button data-cmd="open youtube">Open YouTube</button>
+      <button data-cmd="open google">Open Google</button>
+      <button data-cmd="say task">Say Tasks</button>
+      <button data-cmd="show work">Show Work</button>
+    </div>
+  </aside>
+
+  <!-- ============ CENTER: REACTOR CORE ============ -->
+  <main class="panel panel-center">
+    <div class="core-stage">
+      <svg class="core-rings" viewBox="0 0 520 520" aria-hidden="true">
+        <circle class="ring ring-outer" cx="260" cy="260" r="230"/>
+        <circle class="ring ring-mid"   cx="260" cy="260" r="185"/>
+        <circle class="ring ring-tick"  cx="260" cy="260" r="150"/>
+        <g class="ticks" id="tickGroup"></g>
+      </svg>
+
+      <button class="core-btn" id="coreBtn" aria-label="Activate voice input">
+        <span class="core-glow"></span>
+        <span class="core-symbol">J</span>
+        <svg class="wave" id="waveBars" viewBox="0 0 120 40" aria-hidden="true">
+          <rect x="4"   y="16" width="6" height="8"/>
+          <rect x="16"  y="10" width="6" height="20"/>
+          <rect x="28"  y="4"  width="6" height="32"/>
+          <rect x="40"  y="12" width="6" height="16"/>
+          <rect x="52"  y="0"  width="6" height="40"/>
+          <rect x="64"  y="8"  width="6" height="24"/>
+          <rect x="76"  y="14" width="6" height="12"/>
+          <rect x="88"  y="4"  width="6" height="32"/>
+          <rect x="100" y="12" width="6" height="16"/>
+          <rect x="112" y="16" width="6" height="8"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="status-line">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">System Ready</span>
+    </div>
+    <p class="status-sub" id="statusSub">Tap the core or press the mic to speak</p>
+
+    <div class="text-input-row">
+      <input type="text" id="textInput" placeholder="…or type a command" autocomplete="off">
+      <button id="textSend" aria-label="Send command">Send</button>
+    </div>
+  </main>
+
+  <!-- ============ RIGHT: MISSION CONSOLE ============ -->
+  <aside class="panel panel-right">
+    <h2>Mission Console</h2>
+    <div class="console" id="console">
+      <div class="console-line system">
+        <span class="line-tag">SYS</span>
+        <span class="line-text">J.A.R.V.I.S. online. Awaiting your command, sir.</span>
+      </div>
+    </div>
+    <div class="console-meta">
+      <div class="stat"><span class="stat-label">Process</span><span class="stat-value" id="procState">Idle</span></div>
+      <div class="stat"><span class="stat-label">Memory</span><span class="stat-value">Available</span></div>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer-note">
+  <span id="micHint">🎙️ Voice input requires Chrome or Edge, and microphone permission.</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
